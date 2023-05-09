@@ -1,0 +1,49 @@
+<html>
+  <head>
+    <title>Exercício 03</title>
+    <meta charset="UTF-8">
+	<link href="estilos.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+	<div id="quadro">
+		<div id="cabecalho">
+			<img src="tabajara.jpg" align="left" width="150" style="padding-top: 10px; padding-left: 10px;">
+			<h1 align="center">Fatura Online</h1>
+		</div>
+		<div id="corpo">
+			<p style="color: #000000; font-weight: bold;">Dados do Cliente</p>
+			<ul>
+				<li>CPF: <%= fat.cli.cpf %></li>
+				<li>Nome: <%= fat.cli.nome %></li>
+				<li>Telefone: <%= fat.cli.telefone %></li>
+				<li>Endereço: <%= fat.cli.endereco %></li>
+			</ul>
+			
+			<table border="1" cellpadding="5" cellspacing="0" style="border-color: #000000">
+				<caption style="color: #000000; font-weight: bold;">Dados do Serviço</caption>
+				<tr align="center">
+					<th>Descrição</th>
+					<th>Data de Realização</th>
+					<th>Tipo de Serviço</th>
+					<th>Tempo</th>
+					<th>Valor Unitário</th>
+				</tr>
+				<tr>
+					<td><%= fat.serv.descricao %></td>
+					<td><%= fat.serv.dataRealizacao %></td>
+					<td><%= fat.serv.tipoServico %></td>
+					<td><%= fat.serv.tempoRealizacao %></td>
+					<td>R$ <%= fat.serv.valorHora %></td>
+				</tr>
+			</table>
+		</div>
+		<div id="rodape">
+			<ul class="totais">
+				<li>Total: R$ <%= fat.total %></li>
+				<li>ICMS: <%= fat.serv.percent %>%</li>
+				<li>Valor do ICMS: R$ <%= fat.valorIcms %></li>
+			</ul>
+		</div>
+	</div>
+  </body>
+</html>
